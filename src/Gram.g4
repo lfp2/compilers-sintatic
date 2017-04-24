@@ -39,7 +39,7 @@ Statement
 	|	Identifier '[' Expression ']' '=' Expression ';'
 	;
 Expression
-	:
+	:/* 
 		Expression ( '&&' | '<' | '+' | '-' | '*' ) Expression
 	|
 		Expression '[' Expression ']'
@@ -47,16 +47,16 @@ Expression
 		Expression '.' 'length'
 	|
 		Expression '.' Identifier '(' ( Expression ( ',' Expression )* )? ')'
-	|
+	|*/
 		[1-9][0-9]*|[0]
 	|
-		'true'
+		'true' Expr
 	|
-		'false'
+		'false' Expr
 	|
 		Identifier
 	|
-		'this'
+		'this' Expr
 	|
 		'new' 'int' '[' Expression ']'
 	|
@@ -65,6 +65,16 @@ Expression
 		'!' Expression
 	|
 		'(' Expression ')'
+	;
+Expr
+	:
+		( '&&' | '<' | '+' | '-' | '*' ) Expression Expr
+	|	
+		'[' Expression ']' Expr
+	|
+		'.' 'length' Expr
+	|
+		'.' Identifier '(' ( Expression ( ',' Expression )* )? ')' Expr
 	;
 Alphanumeric
 	:	[a-zA-Z]|[0-9];

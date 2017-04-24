@@ -2,3 +2,5 @@
 /GramBaseListener.java
 /GramListener.java
 /GramParser.java
+/GramLexer.java
+/GramLexer.tokens
