@@ -4,7 +4,7 @@ grammar Gram;
 eval:    Goal;
 Number: [0-9]+ ('.' [0-9]+)?;
 
-WS : [ \t\r\n]+ -> skip ;
+WS : [ \t\r\n\f]+ -> skip ;
 
 Goal
 	:	MainClass '(' ClassDeclaration ')'* '$'
@@ -18,7 +18,8 @@ ClassDeclaration
 		( MethodDeclaration )* '}' 	
 	;
 VarDeclaration 
-	: Type Identifier ';'
+	: 
+		Type Identifier ';'
 	;
 MethodDeclaration
 	: 'public' Type Identifier '(' ( Type Identifier (',' Type Identifier)*)? ')' '{'
@@ -48,7 +49,7 @@ Expression
 	|
 		Expression '.' Identifier '(' ( Expression ( ',' Expression )* )? ')'
 	|*/
-		[1-9][0-9]*|[0]
+		[1-9][0-9]*|[0] //INTEGER_LITERAL
 	|
 		'true' Expr
 	|
@@ -82,4 +83,11 @@ Identifier
 	:
 		[a-zA-Z]({Alphanumeric})*
 	;
-
+Comment_line
+	:
+		'//'.*
+	;
+Comment_ext
+	:
+		[/][*][^*]*[*]+([^*/][^*]*[*]+)*[/]
+	;
