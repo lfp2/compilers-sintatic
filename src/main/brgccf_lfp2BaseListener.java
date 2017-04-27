@@ -1,6 +1,5 @@
-package main;
-
 // Generated from brgccf_lfp2.g4 by ANTLR 4.4
+package main;
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.misc.NotNull;
@@ -18,6 +17,18 @@ public class brgccf_lfp2BaseListener implements brgccf_lfp2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterFormal(@NotNull brgccf_lfp2Parser.FormalContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFormal(@NotNull brgccf_lfp2Parser.FormalContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterMethodDeclaration(@NotNull brgccf_lfp2Parser.MethodDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -25,18 +36,6 @@ public class brgccf_lfp2BaseListener implements brgccf_lfp2Listener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitMethodDeclaration(@NotNull brgccf_lfp2Parser.MethodDeclarationContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void enterEval(@NotNull brgccf_lfp2Parser.EvalContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitEval(@NotNull brgccf_lfp2Parser.EvalContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

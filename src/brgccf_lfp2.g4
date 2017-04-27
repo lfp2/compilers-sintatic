@@ -1,12 +1,12 @@
 grammar brgccf_lfp2;
 
-/* This will be the entry point of our parser. */
-eval:    goal;
-
 WS : [ \t\r\n\f]+ -> skip ;
 
 goal
 	:	mainClass ( classDeclaration )* EOF
+	;
+formal
+	:		type Identifier
 	;
 mainClass
 	:	'class' Identifier '{' 'public' 'static' 'void' 'main' '(' 'String' 
@@ -18,10 +18,10 @@ classDeclaration
 	;
 varDeclaration 
 	: 
-		type Identifier ';'
+		formal ';'
 	;
 methodDeclaration
-	: 'public' type Identifier '(' ( type Identifier (',' type Identifier)*)? ')' '{'
+	: 'public' formal '(' ( formal (',' formal)*)? ')' '{'
 		( varDeclaration )* (statement)* 'return' expression ';''}'
 	;
 type

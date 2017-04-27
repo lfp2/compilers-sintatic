@@ -1,6 +1,5 @@
-package main;
-
 // Generated from brgccf_lfp2.g4 by ANTLR 4.4
+package main;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
@@ -9,6 +8,16 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  * {@link brgccf_lfp2Parser}.
  */
 public interface brgccf_lfp2Listener extends ParseTreeListener {
+	/**
+	 * Enter a parse tree produced by {@link brgccf_lfp2Parser#formal}.
+	 * @param ctx the parse tree
+	 */
+	void enterFormal(@NotNull brgccf_lfp2Parser.FormalContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link brgccf_lfp2Parser#formal}.
+	 * @param ctx the parse tree
+	 */
+	void exitFormal(@NotNull brgccf_lfp2Parser.FormalContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link brgccf_lfp2Parser#methodDeclaration}.
 	 * @param ctx the parse tree
@@ -19,16 +28,6 @@ public interface brgccf_lfp2Listener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitMethodDeclaration(@NotNull brgccf_lfp2Parser.MethodDeclarationContext ctx);
-	/**
-	 * Enter a parse tree produced by {@link brgccf_lfp2Parser#eval}.
-	 * @param ctx the parse tree
-	 */
-	void enterEval(@NotNull brgccf_lfp2Parser.EvalContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link brgccf_lfp2Parser#eval}.
-	 * @param ctx the parse tree
-	 */
-	void exitEval(@NotNull brgccf_lfp2Parser.EvalContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link brgccf_lfp2Parser#goal}.
 	 * @param ctx the parse tree

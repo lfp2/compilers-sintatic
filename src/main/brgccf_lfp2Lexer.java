@@ -1,6 +1,5 @@
-package main;
-
 // Generated from brgccf_lfp2.g4 by ANTLR 4.4
+package main;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Token;

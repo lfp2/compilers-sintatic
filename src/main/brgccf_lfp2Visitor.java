@@ -1,6 +1,5 @@
-package main;
-
 // Generated from brgccf_lfp2.g4 by ANTLR 4.4
+package main;
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
@@ -13,17 +12,17 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface brgccf_lfp2Visitor<T> extends ParseTreeVisitor<T> {
 	/**
+	 * Visit a parse tree produced by {@link brgccf_lfp2Parser#formal}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitFormal(@NotNull brgccf_lfp2Parser.FormalContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link brgccf_lfp2Parser#methodDeclaration}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	T visitMethodDeclaration(@NotNull brgccf_lfp2Parser.MethodDeclarationContext ctx);
-	/**
-	 * Visit a parse tree produced by {@link brgccf_lfp2Parser#eval}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitEval(@NotNull brgccf_lfp2Parser.EvalContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link brgccf_lfp2Parser#goal}.
 	 * @param ctx the parse tree
