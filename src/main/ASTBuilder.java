@@ -1,6 +1,4 @@
 package main;
-import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.antlr.v4.runtime.tree.TerminalNode;
@@ -15,32 +13,17 @@ import main.brgccf_lfp2Parser.StatementContext;
 import main.brgccf_lfp2Parser.TypeContext;
 import main.brgccf_lfp2Parser.VarDeclarationContext;
 import main.brgccf_lfp2BaseVisitor;
-import main.brgccf_lfp2BaseListener;
-import main.brgccf_lfp2Lexer;
-import main.brgccf_lfp2Listener;
-import main.brgccf_lfp2Visitor;
 
 public class ASTBuilder extends brgccf_lfp2BaseVisitor<Object>{
 	public ASTBuilder(){}
 	
 	public Program visitGoal(GoalContext ctx)
 	{
-		System.out.println("visited Goal");
 		MainClass main = this.visitMain(ctx.mainClass());
 		ClassDeclList classList = this.visitClassDeclList(ctx.classDeclaration());
 		return new Program(main, classList);
 		
 	}
-	/*
-	public MainClass visitMainClass(brgccf_lfp2Parser.MainClassContext ctx)
-	{
-		System.out.println("Visited main class");
-		Identifier id1 = new Identifier(ctx.Identifier(0).getText());
-		Identifier id2 = new Identifier(ctx.Identifier(1).getText());
-		Statement st = (Statement) this.visit(ctx.statement());
-		MainClass main = new MainClass(id1, id2, st);
-		return main;
-	}*/
 	
 
 	private ClassDeclList visitClassDeclList(List<ClassDeclarationContext> ctx) {
