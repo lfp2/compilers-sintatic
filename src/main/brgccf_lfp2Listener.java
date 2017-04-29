@@ -9,16 +9,6 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface brgccf_lfp2Listener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link brgccf_lfp2Parser#formal}.
-	 * @param ctx the parse tree
-	 */
-	void enterFormal(@NotNull brgccf_lfp2Parser.FormalContext ctx);
-	/**
-	 * Exit a parse tree produced by {@link brgccf_lfp2Parser#formal}.
-	 * @param ctx the parse tree
-	 */
-	void exitFormal(@NotNull brgccf_lfp2Parser.FormalContext ctx);
-	/**
 	 * Enter a parse tree produced by {@link brgccf_lfp2Parser#methodDeclaration}.
 	 * @param ctx the parse tree
 	 */

@@ -12,12 +12,6 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface brgccf_lfp2Visitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link brgccf_lfp2Parser#formal}.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	T visitFormal(@NotNull brgccf_lfp2Parser.FormalContext ctx);
-	/**
 	 * Visit a parse tree produced by {@link brgccf_lfp2Parser#methodDeclaration}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

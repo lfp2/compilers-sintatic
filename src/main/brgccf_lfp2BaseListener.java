@@ -17,18 +17,6 @@ public class brgccf_lfp2BaseListener implements brgccf_lfp2Listener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterFormal(@NotNull brgccf_lfp2Parser.FormalContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
-	@Override public void exitFormal(@NotNull brgccf_lfp2Parser.FormalContext ctx) { }
-	/**
-	 * {@inheritDoc}
-	 *
-	 * <p>The default implementation does nothing.</p>
-	 */
 	@Override public void enterMethodDeclaration(@NotNull brgccf_lfp2Parser.MethodDeclarationContext ctx) { }
 	/**
 	 * {@inheritDoc}

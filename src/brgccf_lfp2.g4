@@ -5,9 +5,6 @@ WS : [ \t\r\n\f]+ -> skip ;
 goal
 	:	mainClass ( classDeclaration )* EOF
 	;
-formal
-	:		type Identifier
-	;
 mainClass
 	:	'class' Identifier '{' 'public' 'static' 'void' 'main' '(' 'String' 
 		'[' ']' Identifier ')' '{' statement '}' '}'
@@ -18,12 +15,12 @@ classDeclaration
 	;
 varDeclaration 
 	: 
-		formal ';'
+		type Identifier ';'
 	;
-methodDeclaration
-	: 'public' formal '(' ( formal (',' formal)*)? ')' '{'
-		( varDeclaration )* (statement)* 'return' expression ';''}'
-	;
+methodDeclaration :'public' type Identifier '(' ( type Identifier ( 
+				   ',' type Identifier )* )? ')' '{' ( varDeclaration )* 
+				   ( statement )* 'return' expression ';' '}'
+				   ;
 type
 	:	'int' '[' ']'  
 	|	'boolean'
@@ -44,13 +41,13 @@ INTEGER_LITERAL
 	;
 expression
 	:
-		expression ( '&&' | '<' | '+' | '-' | '*' ) expression
+		expression OP expression
 	|	
-		'[' expression ']'
+		expression '[' expression ']'
 	|
-		'.' 'length'
+		expression '.' 'length'
 	|
-		'.' Identifier '(' ( expression ( ',' expression )* )? ')'
+		expression '.' Identifier '(' ( expression ( ',' expression )* )? ')'
 	|
 		INTEGER_LITERAL
 	|
@@ -69,6 +66,10 @@ expression
 		'!' expression
 	|
 		'(' expression ')'
+	;
+OP
+	:
+		( '&&' | '<' | '+' | '-' | '*' )
 	;
 Identifier
 	:
