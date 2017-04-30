@@ -1,8 +1,5 @@
 grammar brgccf_lfp2;
 
-/* This will be the entry point of our parser. */
-eval:    goal;
-
 WS : [ \t\r\n\f]+ -> skip ;
 
 goal
@@ -20,10 +17,10 @@ varDeclaration
 	: 
 		type Identifier ';'
 	;
-methodDeclaration
-	: 'public' type Identifier '(' ( type Identifier (',' type Identifier)*)? ')' '{'
-		( varDeclaration )* (statement)* 'return' expression ';''}'
-	;
+methodDeclaration :'public' type Identifier '(' ( type Identifier ( 
+				   ',' type Identifier )* )? ')' '{' ( varDeclaration )* 
+				   ( statement )* 'return' expression ';' '}'
+				   ;
 type
 	:	'int' '[' ']'  
 	|	'boolean'
@@ -44,13 +41,13 @@ INTEGER_LITERAL
 	;
 expression
 	:
-		expression ( '&&' | '<' | '+' | '-' | '*' ) expression
+		expression OP expression
 	|	
-		'[' expression ']'
+		expression '[' expression ']'
 	|
-		'.' 'length'
+		expression '.' 'length'
 	|
-		'.' Identifier '(' ( expression ( ',' expression )* )? ')'
+		expression '.' Identifier '(' ( expression ( ',' expression )* )? ')'
 	|
 		INTEGER_LITERAL
 	|
@@ -69,6 +66,10 @@ expression
 		'!' expression
 	|
 		'(' expression ')'
+	;
+OP
+	:
+		( '&&' | '<' | '+' | '-' | '*' )
 	;
 Identifier
 	:
